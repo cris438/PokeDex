@@ -10,9 +10,11 @@ const PokemonProvider = ({ children }) => {
     const [pokemonsFilter, setPokemonsFilter] = useState([])
     const [paginados, setPaginados] = useState([])
     const [page, setPage] = useState(0)
+    const [loading, setLoading] = useState(false)
 
     useEffect(() => {
         const getPoke = async () => {
+            setLoading(true)
             try {
                 // const { data } = await apiClient.get('/pokemon?limit=1025')
                 const { data } = await apiClient.get(`/pokemon?limit=20&offset=${page * 20}`)
@@ -31,6 +33,8 @@ const PokemonProvider = ({ children }) => {
                 setPokemonsFilter(pokemons)
             } catch (error) {
                 console.log(error)
+            } finally {
+                setLoading(false)
             }
 
         }
@@ -85,6 +89,7 @@ const PokemonProvider = ({ children }) => {
             paginados,
             page,
             setPage,
+            loading,
         }}>
             {children}
         </PokemonContext.Provider>
