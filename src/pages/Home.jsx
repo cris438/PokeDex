@@ -14,12 +14,12 @@ const Home = () => {
             Explora personajes, descubre tipos y vive la emoción de cada batalla.
             Una experiencia visual moderna para navegar tu mundo Pokémon favorito.
           </p>
-          <div className="d-flex flex-wrap justify-content-center justify-content-lg-start gap-3">
+          <div className="hero-actions">
             <Button as={NavLink} to="/personajes" variant="primary" size="lg" className="btn-pokemon-primary">
               Ver catálogo
             </Button>
-            <Button as={NavLink} to="/personajes" variant="outline-primary" size="lg" className="btn-pokemon-secondary">
-              Explorar pokémon
+            <Button as={NavLink} to="/favorites" variant="outline-primary" size="lg" className="btn-pokemon-secondary">
+              Ver mis favoritos
             </Button>
           </div>
         </Col>
@@ -39,8 +39,8 @@ const Home = () => {
         <Col md={4}>
           <div className="feature-card h-100">
             <div className="feature-icon">⚡</div>
-            <h3>Energia</h3>
-            <p>Diseño dinámico con una estética moderna y atractiva.</p>
+            <h3>Habilidades y caracteristicas</h3>
+            <p>Conoce las habilidades y caracteristicas de todos los pokemones que quieras.</p>
           </div>
         </Col>
         <Col md={4}>
@@ -53,8 +53,8 @@ const Home = () => {
         <Col md={4}>
           <div className="feature-card h-100">
             <div className="feature-icon">🌟</div>
-            <h3>Estilo premium</h3>
-            <p>Una interfaz inspirada en tonos Pokémon con enfoque premium.</p>
+            <h3>¿Cuales son tus pokemones favoritos?</h3>
+            <p>Puedes añadir a tus pokemones favoritos a la seccion de favoritos.</p>
           </div>
         </Col>
       </Row>

@@ -3,6 +3,8 @@ import { Container, Navbar, Nav } from "react-bootstrap"
 import { Home } from "./pages/Home"
 import { Personajes } from "./pages/Personajes"
 import { PokemonProvider } from "./context/PokemonContext"
+import { DetallePokemon } from "./pages/DetallePokemon"
+import { Favoritos } from "./pages/Favoritos"
 
 function App() {
   return (
@@ -23,6 +25,9 @@ function App() {
                   <Nav.Link as={NavLink} to="/personajes" className="nav-link-custom">
                     Catálogo
                   </Nav.Link>
+                  <Nav.Link as={NavLink} to="/favorites" className="nav-link-custom">
+                  Favoritos
+                  </Nav.Link>
                 </Nav>
               </Navbar.Collapse>
             </Container>
@@ -32,6 +37,8 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/personajes" element={<Personajes />} />
+              <Route path="/detalle/:id" element={<DetallePokemon />} />
+              <Route path="/favorites" element={<Favoritos />} />
             </Routes>
           </main>
         </div>
